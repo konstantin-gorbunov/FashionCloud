@@ -10,18 +10,34 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    private var mapper: Mapper?
+    
+    private let pricatPath = Bundle.main.path(forResource: "pricat", ofType: "csv")
+    private let mappingPath = Bundle.main.path(forResource: "mappings", ofType: "csv")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        mapper = Mapper(configPath: mappingPath)
+    }
+    
+    // MARK: - IBActions - menus
+    
+    @IBAction func startParsing(_ sender: Any) {
+        produceParsing()
     }
 
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
+    // MARK: - private
+    
+    private func produceParsing() {
+        guard let pricatPath = pricatPath else {
+            print("Can't find pricat CSV file.")
+            return
         }
-    }
-
-
+        let pricatRequest = URLRequest(url: NSURL.fileURL(withPath: pricatPath))
+        
+        print("produceParsing of \(pricatRequest) with \(mapper)")
+        // TODO: produceParsing
+    }    
 }
 
