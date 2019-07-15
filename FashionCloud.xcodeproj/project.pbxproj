@@ -16,6 +16,10 @@
 		8B959AE422D8B28900322FF0 /* pricat.csv in Resources */ = {isa = PBXBuildFile; fileRef = 8B959AE222D8B28900322FF0 /* pricat.csv */; };
 		8B959AE622D8C31A00322FF0 /* MappingRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B959AE522D8C31A00322FF0 /* MappingRule.swift */; };
 		8B959AE822D8C3EC00322FF0 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B959AE722D8C3EC00322FF0 /* Mapper.swift */; };
+		8B959AEA22DC614100322FF0 /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B959AE922DC614100322FF0 /* CSV.swift */; };
+		8B959AEB22DC614100322FF0 /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B959AE922DC614100322FF0 /* CSV.swift */; };
+		8B959AEC22DC614700322FF0 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B959AE722D8C3EC00322FF0 /* Mapper.swift */; };
+		8B959AED22DC614900322FF0 /* MappingRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B959AE522D8C31A00322FF0 /* MappingRule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +47,7 @@
 		8B959AE222D8B28900322FF0 /* pricat.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pricat.csv; sourceTree = "<group>"; };
 		8B959AE522D8C31A00322FF0 /* MappingRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingRule.swift; sourceTree = "<group>"; };
 		8B959AE722D8C3EC00322FF0 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		8B959AE922DC614100322FF0 /* CSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSV.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +99,7 @@
 				8B959AE222D8B28900322FF0 /* pricat.csv */,
 				8B959AE522D8C31A00322FF0 /* MappingRule.swift */,
 				8B959AE722D8C3EC00322FF0 /* Mapper.swift */,
+				8B959AE922DC614100322FF0 /* CSV.swift */,
 			);
 			path = FashionCloud;
 			sourceTree = "<group>";
@@ -211,6 +217,7 @@
 			files = (
 				8B959AE822D8C3EC00322FF0 /* Mapper.swift in Sources */,
 				8B959AE622D8C31A00322FF0 /* MappingRule.swift in Sources */,
+				8B959AEA22DC614100322FF0 /* CSV.swift in Sources */,
 				8B959AC622D8B23B00322FF0 /* ViewController.swift in Sources */,
 				8B959AC422D8B23B00322FF0 /* AppDelegate.swift in Sources */,
 			);
@@ -220,6 +227,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B959AED22DC614900322FF0 /* MappingRule.swift in Sources */,
+				8B959AEB22DC614100322FF0 /* CSV.swift in Sources */,
+				8B959AEC22DC614700322FF0 /* Mapper.swift in Sources */,
 				8B959AD722D8B23D00322FF0 /* FashionCloudTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
