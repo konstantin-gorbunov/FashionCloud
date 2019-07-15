@@ -20,6 +20,10 @@
 		8B959AEB22DC614100322FF0 /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B959AE922DC614100322FF0 /* CSV.swift */; };
 		8B959AEC22DC614700322FF0 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B959AE722D8C3EC00322FF0 /* Mapper.swift */; };
 		8B959AED22DC614900322FF0 /* MappingRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B959AE522D8C31A00322FF0 /* MappingRule.swift */; };
+		8B959AEF22DC92FF00322FF0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B959AEE22DC92FF00322FF0 /* Item.swift */; };
+		8B959AF022DC92FF00322FF0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B959AEE22DC92FF00322FF0 /* Item.swift */; };
+		8B959AF222DC9A2500322FF0 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B959AF122DC9A2500322FF0 /* Parser.swift */; };
+		8B959AF322DC9A2500322FF0 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B959AF122DC9A2500322FF0 /* Parser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,8 @@
 		8B959AE522D8C31A00322FF0 /* MappingRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingRule.swift; sourceTree = "<group>"; };
 		8B959AE722D8C3EC00322FF0 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
 		8B959AE922DC614100322FF0 /* CSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSV.swift; sourceTree = "<group>"; };
+		8B959AEE22DC92FF00322FF0 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		8B959AF122DC9A2500322FF0 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,8 @@
 				8B959AE522D8C31A00322FF0 /* MappingRule.swift */,
 				8B959AE722D8C3EC00322FF0 /* Mapper.swift */,
 				8B959AE922DC614100322FF0 /* CSV.swift */,
+				8B959AEE22DC92FF00322FF0 /* Item.swift */,
+				8B959AF122DC9A2500322FF0 /* Parser.swift */,
 			);
 			path = FashionCloud;
 			sourceTree = "<group>";
@@ -219,7 +227,9 @@
 				8B959AE622D8C31A00322FF0 /* MappingRule.swift in Sources */,
 				8B959AEA22DC614100322FF0 /* CSV.swift in Sources */,
 				8B959AC622D8B23B00322FF0 /* ViewController.swift in Sources */,
+				8B959AEF22DC92FF00322FF0 /* Item.swift in Sources */,
 				8B959AC422D8B23B00322FF0 /* AppDelegate.swift in Sources */,
+				8B959AF222DC9A2500322FF0 /* Parser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,7 +237,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B959AF022DC92FF00322FF0 /* Item.swift in Sources */,
 				8B959AED22DC614900322FF0 /* MappingRule.swift in Sources */,
+				8B959AF322DC9A2500322FF0 /* Parser.swift in Sources */,
 				8B959AEB22DC614100322FF0 /* CSV.swift in Sources */,
 				8B959AEC22DC614700322FF0 /* Mapper.swift in Sources */,
 				8B959AD722D8B23D00322FF0 /* FashionCloudTests.swift in Sources */,
