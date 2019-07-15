@@ -24,6 +24,12 @@
 		8B959AF022DC92FF00322FF0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B959AEE22DC92FF00322FF0 /* Item.swift */; };
 		8B959AF222DC9A2500322FF0 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B959AF122DC9A2500322FF0 /* Parser.swift */; };
 		8B959AF322DC9A2500322FF0 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B959AF122DC9A2500322FF0 /* Parser.swift */; };
+		8B959AF522DCECDE00322FF0 /* Variation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B959AF422DCECDE00322FF0 /* Variation.swift */; };
+		8B959AF622DCECDE00322FF0 /* Variation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B959AF422DCECDE00322FF0 /* Variation.swift */; };
+		8B959AF822DCECF400322FF0 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B959AF722DCECF400322FF0 /* Article.swift */; };
+		8B959AF922DCECF400322FF0 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B959AF722DCECF400322FF0 /* Article.swift */; };
+		8B959AFB22DCED1400322FF0 /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B959AFA22DCED1400322FF0 /* Catalog.swift */; };
+		8B959AFC22DCED1400322FF0 /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B959AFA22DCED1400322FF0 /* Catalog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +60,9 @@
 		8B959AE922DC614100322FF0 /* CSV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSV.swift; sourceTree = "<group>"; };
 		8B959AEE22DC92FF00322FF0 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		8B959AF122DC9A2500322FF0 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		8B959AF422DCECDE00322FF0 /* Variation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variation.swift; sourceTree = "<group>"; };
+		8B959AF722DCECF400322FF0 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		8B959AFA22DCED1400322FF0 /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +117,9 @@
 				8B959AE922DC614100322FF0 /* CSV.swift */,
 				8B959AEE22DC92FF00322FF0 /* Item.swift */,
 				8B959AF122DC9A2500322FF0 /* Parser.swift */,
+				8B959AF422DCECDE00322FF0 /* Variation.swift */,
+				8B959AF722DCECF400322FF0 /* Article.swift */,
+				8B959AFA22DCED1400322FF0 /* Catalog.swift */,
 			);
 			path = FashionCloud;
 			sourceTree = "<group>";
@@ -225,11 +237,14 @@
 			files = (
 				8B959AE822D8C3EC00322FF0 /* Mapper.swift in Sources */,
 				8B959AE622D8C31A00322FF0 /* MappingRule.swift in Sources */,
+				8B959AF822DCECF400322FF0 /* Article.swift in Sources */,
 				8B959AEA22DC614100322FF0 /* CSV.swift in Sources */,
 				8B959AC622D8B23B00322FF0 /* ViewController.swift in Sources */,
+				8B959AFB22DCED1400322FF0 /* Catalog.swift in Sources */,
 				8B959AEF22DC92FF00322FF0 /* Item.swift in Sources */,
 				8B959AC422D8B23B00322FF0 /* AppDelegate.swift in Sources */,
 				8B959AF222DC9A2500322FF0 /* Parser.swift in Sources */,
+				8B959AF522DCECDE00322FF0 /* Variation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,12 +252,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B959AFC22DCED1400322FF0 /* Catalog.swift in Sources */,
 				8B959AF022DC92FF00322FF0 /* Item.swift in Sources */,
 				8B959AED22DC614900322FF0 /* MappingRule.swift in Sources */,
 				8B959AF322DC9A2500322FF0 /* Parser.swift in Sources */,
 				8B959AEB22DC614100322FF0 /* CSV.swift in Sources */,
+				8B959AF922DCECF400322FF0 /* Article.swift in Sources */,
 				8B959AEC22DC614700322FF0 /* Mapper.swift in Sources */,
 				8B959AD722D8B23D00322FF0 /* FashionCloudTests.swift in Sources */,
+				8B959AF622DCECDE00322FF0 /* Variation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,7 @@ class ViewController: NSViewController {
 
     private var mapper: Mapper?
     private let parser = Parser()
+    private var catalog = Catalog()
     
     private let pricatPath = Bundle.main.path(forResource: "pricat", ofType: "csv")
     private let mappingPath = Bundle.main.path(forResource: "mappings", ofType: "csv")
@@ -20,6 +21,7 @@ class ViewController: NSViewController {
         super.viewDidLoad()
 
         mapper = Mapper(configPath: mappingPath)
+        parser.delegate = self
     }
     
     // MARK: - IBActions - menus
@@ -30,5 +32,26 @@ class ViewController: NSViewController {
         } catch {
             print("\(error)")
         }
+    }
+    
+    // MARK: - private
+    
+    private func printJSON(_ items: [Item]) {
+        if let jsonData = try? JSONEncoder().encode(items) {
+            let jsonString = String(data: jsonData, encoding: .utf8)!
+            print(jsonString)
+        } else {
+            print("Parser can't encode items.")
+        }
+    }
+}
+
+extension ViewController: ParserSubscribtion {
+    
+    func parserDidEnd(_ parsedItems: [Item]) {
+        for item in parsedItems {
+            catalog.addItem(item)
+        }
+        print("\(catalog)")
     }
 }

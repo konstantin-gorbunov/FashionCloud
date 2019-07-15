@@ -14,7 +14,13 @@ enum ParserError: Error {
     case parsingProblem
 }
 
+protocol ParserSubscribtion: class {
+     func parserDidEnd(_ parsedItems: [Item])
+}
+
 class Parser {
+    
+    public weak var delegate: ParserSubscribtion?
     
     private var parsedItems: [Item] = []
     private var currentItem: Item?
@@ -53,6 +59,8 @@ class Parser {
         }
     }
     
+    // MARK: - private
+    
     private func mapping(_ item: inout Item, withMapper: Mapper?) {
         guard let mapper = mapper else {
             print("Mapper is not initialized.")
@@ -86,15 +94,6 @@ class Parser {
             }
         }
     }
-    
-    private func printJSON(_ items: [Item]) {
-        if let jsonData = try? JSONEncoder().encode(items) {
-            let jsonString = String(data: jsonData, encoding: .utf8)!
-            print(jsonString)
-        } else {
-             print("Parser can't encode items.")
-        }
-    }
 }
 
 extension Parser: ParserDelegate {
@@ -102,7 +101,7 @@ extension Parser: ParserDelegate {
     }
     
     func parserDidEndDocument(_ parser: CSV.Parser) {
-        printJSON(parsedItems)
+        delegate?.parserDidEnd(parsedItems)
     }
     
     func parser(_ parser: CSV.Parser, didBeginLineAt index: UInt) {
