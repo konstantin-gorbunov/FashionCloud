@@ -27,10 +27,12 @@ class ViewController: NSViewController {
     // MARK: - IBActions - menus
     
     @IBAction func startParsing(_ sender: Any) {
-        do {
-            try parser.produceParsing(pricatPath, mapper: mapper)
-        } catch {
-            print("\(error)")
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            do {
+                try self?.parser.produceParsing(self?.pricatPath, mapper: self?.mapper)
+            } catch {
+                print("\(error)")
+            }
         }
     }
     
@@ -45,7 +47,7 @@ class ViewController: NSViewController {
         }
     }
     
-    private func printJSON(_ catalog: Catalog) {
+    private func printJSON(_ catalog: Catalog?) {
         if let jsonData = try? JSONEncoder().encode(catalog),
             let jsonString = String(data: jsonData, encoding: .utf8) {
             print(jsonString)
@@ -61,6 +63,8 @@ extension ViewController: ParserSubscribtion {
         for item in parsedItems {
             catalog.addItem(item)
         }
-        printJSON(catalog)
+        DispatchQueue.main.async { [weak self] in
+            self?.printJSON(self?.catalog)
+        }
     }
 }
