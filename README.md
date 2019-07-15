@@ -1,2 +1,2 @@
 # FashionCloud
-CSVparser
+CSVparser + mapping + JSON presenter
