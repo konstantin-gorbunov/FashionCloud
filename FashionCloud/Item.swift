@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Item {
-    let headers: [String]
+struct Item: Codable {
+    var headers: [String]
     var values: [String] = []
     
     init(headers: [String]) {

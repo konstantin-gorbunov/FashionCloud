@@ -19,7 +19,7 @@ struct Mapper {
         static let allValues = [source, destination, sourceType, destinationType]
     }
     
-    private var rules: [MappingRule] = []
+    var rules: [MappingRule] = []
     
     init(configPath: String?) {
         guard let configPath = configPath else {

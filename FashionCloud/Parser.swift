@@ -19,18 +19,21 @@ class Parser {
     private var parsedItems: [Item] = []
     private var currentItem: Item?
     private var headers: [String] = []
+    private var mapper: Mapper?
     
     // MARK: - public
     
     func produceParsing(_ path: String?, mapper: Mapper?) throws {
+        
         guard let pricatPath = path else {
             print("Can't find pricat CSV file.")
             throw ParserError.noSourceFile
         }
-        guard let _ = mapper else {
+        guard let mapper = mapper else {
             print("Mapper is not initialized.")
             throw ParserError.mapperNotFound
         }
+        self.mapper = mapper
         let pricatURL = NSURL.fileURL(withPath: pricatPath)
         
         guard let stream = InputStream(url: pricatURL) else {
@@ -49,15 +52,57 @@ class Parser {
             throw ParserError.parsingProblem
         }
     }
+    
+    private func mapping(_ item: inout Item, withMapper: Mapper?) {
+        guard let mapper = mapper else {
+            print("Mapper is not initialized.")
+            return
+        }
+        for rule in mapper.rules {
+            var sourcesIndex: [Int] = []
+            var skipRule = false
+            for (sourceIndex, sourceType) in rule.sourceTypes.enumerated() {
+                if let indexOfSource = headers.firstIndex(of: sourceType) {
+                    sourcesIndex.append(indexOfSource)
+                    if item.values[indexOfSource] != rule.sources[sourceIndex] {
+                        skipRule = true
+                    }
+                } else {
+                    skipRule = true
+                    print("Parser can't find source type")
+                }
+            }
+            if skipRule {
+                continue
+            }
+            sourcesIndex.sort()
+            for index in sourcesIndex.reversed() {
+                item.headers.remove(at: index)
+                item.values.remove(at: index)
+            }
+            if let firstIndex = sourcesIndex.first {
+                item.headers.insert(rule.destinationType, at: firstIndex)
+                item.values.insert(rule.destination, at: firstIndex)
+            }
+        }
+    }
+    
+    private func printJSON(_ items: [Item]) {
+        if let jsonData = try? JSONEncoder().encode(items) {
+            let jsonString = String(data: jsonData, encoding: .utf8)!
+            print(jsonString)
+        } else {
+             print("Parser can't encode items.")
+        }
+    }
 }
 
 extension Parser: ParserDelegate {
     func parserDidBeginDocument(_ parser: CSV.Parser) {
-        print("DidBeginDocument")
     }
     
     func parserDidEndDocument(_ parser: CSV.Parser) {
-        print("DidEndDocument \(parsedItems.count)")
+        printJSON(parsedItems)
     }
     
     func parser(_ parser: CSV.Parser, didBeginLineAt index: UInt) {
@@ -68,9 +113,10 @@ extension Parser: ParserDelegate {
     }
     
     func parser(_ parser: CSV.Parser, didEndLineAt index: UInt) {
-        guard let currentItem = currentItem else {
+        guard var currentItem = currentItem else {
             return
         }
+        mapping(&currentItem, withMapper: mapper);
         parsedItems.append(currentItem)
     }
     
