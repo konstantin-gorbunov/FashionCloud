@@ -44,6 +44,15 @@ class ViewController: NSViewController {
             print("Parser can't encode items.")
         }
     }
+    
+    private func printJSON(_ catalog: Catalog) {
+        if let jsonData = try? JSONEncoder().encode(catalog),
+            let jsonString = String(data: jsonData, encoding: .utf8) {
+            print(jsonString)
+        } else {
+            print("Parser can't encode items.")
+        }
+    }
 }
 
 extension ViewController: ParserSubscribtion {
@@ -52,6 +61,6 @@ extension ViewController: ParserSubscribtion {
         for item in parsedItems {
             catalog.addItem(item)
         }
-        print("\(catalog)")
+        printJSON(catalog)
     }
 }

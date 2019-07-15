@@ -81,3 +81,17 @@ extension Article: CustomStringConvertible {
         return description
     }
 }
+
+extension Article: Encodable {
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(values, forKey: .id)
+        try container.encode(variations, forKey: .variation)
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "Article"
+        case variation = "Variation"
+    }
+}
