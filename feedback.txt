@@ -1,0 +1,7 @@
+- The structure of the output is a bit weird. There are catalogs and articles, but the articles are not part of any catalog.
+- Each variant is three times in an article.
+- Data from the first article is present in the second article (like article structure = Boot, while the second article is only Pump).
+- When multiple destination types rely on the same source type(s), they are not added to the product information.
+- The structure of the code is not very intuitive. For example, the parser is doing the actual work, instead of only parsing. Mapper.swift reads the csv and Parse.swift performs the mappings.
+- Articles without an article_number are ignored, instead of a proper error raised.
+- There are no tests written.
